@@ -3,13 +3,11 @@ class DB
 {
     function __construct()
     {
-        /*****все проверить*****/
         $host = 'localhost';
         $port = '3306';
         $name = 'racing';
         $user = 'root';
         $password = '';
-        /*****все проверить*****/
 
         try {
             $this->db = new PDO(
@@ -50,7 +48,7 @@ class DB
 
     public function addUser($name, $login, $password)
     {
-        $query1 = "INSERT INTO `users` (`id`, `name`, `login`, `password`, `token`) VALUES (NULL, '" . $name . "', '" . $login . "', '" . $password . "', NULL)";
-        $this->db->query($query1);
+        $query = "INSERT INTO `users` (`id`, `name`, `login`, `password`, `token`) VALUES (NULL, '" . $name . "', '" . $login . "', '" . $password . "', NULL)";
+        $this->db->query($query);
     }
 }
